@@ -5,7 +5,7 @@ const BottomNav: React.FC = () => {
   return (
     <NavContainer>
       <NavItem>
-        <img src="/icons/profile.png" alt="Profile" />
+        <img src="/icons/profile.png" alt="Profileテスト" />
       </NavItem>
       <NavItem>
         <img src="/icons/globe.png" alt="Website" />
