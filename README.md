@@ -15,24 +15,47 @@ $ git checkout -b feature/新機能名
 
 3. 現在の変更されているファイルを確認する。
 $ git status
+※ (変更されているファイルは赤色)
 
 4. 変更したファイルをステージングエリアに追加
 $ git add ファイル名
 ※ ($ git add . ← このコマンドで変更されているファイルを一括でステージングエリアに追加できる。)
 
-5. 変更をコミットする。
+※ 変更内容をステージングエリアから戻したいとき
+$ git reset HEAD ファイル名
+
+5. 変更したファイルがステージングエリアに上がったことを確認
+$ git status (上がっていたら緑色)
+
+6. 変更をコミットする。
 $ git commit -m "変更内容を記載"
 
-6. GitHub にプッシュする。
+7. GitHub にプッシュする。
 $ git push -u origin ブランチ名
 ※ ('ブランチ名' は上記の例で言うと 'feature/新機能名')
 
-7. ブラウザの GitHub の画面で Pull requests タブを開く。
+8. ブラウザの GitHub の画面で Pull requests タブを開く。
 
-8. GitHub の画面上でプルリクエストを作成。
+9. compare & Pull request ボタンを押す。
 
-9. master ブランチへマージする。
+10. マージ先のブランチを main → master
 
+11. create pull request ボタンでプルリクエストを作成。
+
+12. merge pull request を押す。
+
+13. comfirm merge で master ブランチへマージされる。
+
+14. 不要なブランチを消す(紫のボタン)
+
+15. ローカル master ブランチを最新化する
+$ git checkout master
+$ git pull origin master
+※ 取り込む内容とローカルで変更された内容が被ってエラーしたとき↓
+$ git stash (変更内容を別の場所に退避)
+$ git pull origin master (最新の情報を取得する)
+$ git stash list (退避させた変更内容の一覧を表示)
+$ git stash pop stash@{0} (退避させた変更を戻す)
 
 ## Available Scripts
 
