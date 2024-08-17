@@ -2,6 +2,38 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## コードの変更をするときの git の操作
+1. まずは master ブランチに移動&最新化する。
+$ git checkout master
+$ git pull origin master
+
+2. 何かを修正するときは master ブランチから 作業ブランチを切り出し、切り出したブランチへ移動する。
+$ git checkout -b feature/新機能名
+
+※ ('$ git branch' コマンドで現在のブランチを確認できる。)
+※ (不要なブランチを削除する →　git branch -d ブランチ名)
+
+3. 現在の変更されているファイルを確認する。
+$ git status
+
+4. 変更したファイルをステージングエリアに追加
+$ git add ファイル名
+※ ($ git add . ← このコマンドで変更されているファイルを一括でステージングエリアに追加できる。)
+
+5. 変更をコミットする。
+$ git commit -m "変更内容を記載"
+
+6. GitHub にプッシュする。
+$ git push -u origin ブランチ名
+※ ('ブランチ名' は上記の例で言うと 'feature/新機能名')
+
+7. ブラウザの GitHub の画面で Pull requests タブを開く。
+
+8. GitHub の画面上でプルリクエストを作成。
+
+9. master ブランチへマージする。
+
+
 ## Available Scripts
 
 In the project directory, you can run:
